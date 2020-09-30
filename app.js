@@ -1,82 +1,81 @@
 // External Libraries
 const express = require('express');
-
-// Inbuilt Libraries
-const fs = require('fs');
-const path = require('path');
+const Cors = require('cors');
+const mysql = require('mysql');
 
 // Custom Libraries
-const RequestError = require('./models/request-error');
+const RequestError = require('./src/models/request-error');
 
 // Routes
-const adminRoutes = require('./routes/admin-routes');
-const taskRoutes = require('./routes/task-routes');
-const liveRoutes = require('./routes/live-routes');
-const universityRoutes = require('./routes/university-routes');
-const campusDirectorRoutes = require('./routes/campus-director-routes');
-
 
 
 // Setup server:
 const app = express();
-app.use(bodyParser.json());
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader(
-      'Access-Control-Allow-Headers',
-      'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  );
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-
-  next();
-});
-
-// Handle File upload:
-app.use('/uploads/images', express.static(path.join('uploads', 'images')));
-
+app.use(express.json());
+app.use(Cors());
 
 // Setup Routes:
-app.use('/api/v1/admin', adminRoutes);
-app.use('/api/v1/campusDirector', campusDirectorRoutes);
-app.use('/api/v1/task',taskRoutes);
-app.use('/api/v1/university',universityRoutes);
-app.use('/api/v1/live',liveRoutes);
+
+//DB connection
+const connectionOptions = mysql.createConnection({
+    host: process.env.DB_HOST_NAME,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,
+    database: process.env.DB_NAME
+});
+
+connectionOptions.connect(function (err) {
+    if (err) throw err;
+});
+app.get('/', (req, res) => {
+    res.send("<h1>Hello</h1>");
+});
+
+app.get('/create',(req, res) => {
+    connectionOptions.query("Create table users(\n" +
+        "   ID   INT              NOT NULL,\n" +
+        "   NAME VARCHAR (20)     NOT NULL,\n" +
+        "   AGE  INT              NOT NULL,\n" +
+        "   ADDRESS  CHAR (25) ,\n" +
+        "   SALARY   DECIMAL (18, 2),       \n" +
+        "   PRIMARY KEY (ID)\n" +
+        ")", (err, rows, fields) => {
+        if (!err) {
+            console.log(rows,fields);
+            res.send("Created");
+        }
+        else res.send(err);
+    });
+});
+
+app.get('/campus', (req, res) => {
+    connectionOptions.query("describe users", (err, rows, fields) => {
+        if (!err) res.send(rows);
+        else res.send(err);
+    });
+});
+
 
 // Unsupported Routes.
 app.use((req, res, next) => {
-  throw new RequestError('Could not find this route.', 404);
+    throw new RequestError('Could not find this route.', 404);
 });
 
 // Error Handling
 app.use((error, req, res, next) => {
-  if (req.file) {
-    fs.unlink(req.file.path, err => {
-      console.log(err);
+    if (res.headersSent) {
+        return next(error);
+    }
+    res.status(error.code || 500);
+    res.json({
+        "status": "failed",
+        "message": error.message || 'An unknown error occurred!'
     });
-  }
-  if (res.headersSent) {
-    return next(error);
-  }
-  res.status(error.code || 500);
-  res.json({
-    "status": "failed",
-    "message": error.message || 'An unknown error occurred!'
-  });
 });
 
-
-
-mongoose.connect(`${process.env.DB_URL}`, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
-}).then(() => {
-  app.listen(process.env.SV_PORT, () => {
-    console.log(`\n${process.env.APP_NAME} Started\nListening on port: ${process.env.SV_PORT}`);
-    console.log(`Connected to DB at ${process.env.DB_URL} \nUsing DB: ${process.env.DB_Name}`);
-  });
-}).catch(err => {
-  console.log(`Error occured while connecting to database: ${process.env.DB_URL}`)
-  console.log(err);
+// server start
+app.listen(process.env.SERVER_PORT, () => {
+        console.log(`\nStarted\nListening on port: ${process.env.SERVER_PORT}`);
+        console.log(`Connected to DB at ${process.env.DB_HOST_NAME} \nUsing DB: ${process.env.DB_NAME}`);
 });
