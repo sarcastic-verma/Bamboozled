@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09cd5402-e734-415b-b731-5805aa7ef942" name="Default Changelist" comment="" />
+    <list default="true" id="09cd5402-e734-415b-b731-5805aa7ef942" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +23,7 @@
   </component>
   <component name="ProjectId" id="1iFA9lquiK1S3wnLjBGdgvhQgfE" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -55,6 +59,8 @@
       <updated>1601492817638</updated>
       <workItem from="1601492819456" duration="4091000" />
       <workItem from="1601876147475" duration="5920000" />
+      <workItem from="1601887333966" duration="348000" />
+      <workItem from="1601889970272" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="- added tests boilerplate&#10; - connected sql to gend">
       <created>1601496404147</created>
@@ -77,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601887225503</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" - something changed">
+      <created>1601887462403</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601887462403</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,13 +107,18 @@
     <MESSAGE value="- added tests boilerplate&#10; - connected sql to gend" />
     <MESSAGE value=" - connected sql to gend" />
     <MESSAGE value=" - moved to typescript" />
-    <option name="LAST_COMMIT_MESSAGE" value=" - moved to typescript" />
+    <MESSAGE value=" - something changed" />
+    <option name="LAST_COMMIT_MESSAGE" value=" - something changed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2" timestamp="1601887225353">
+    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2" timestamp="1601887462202">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2/0.24.1920.1056@0.24.1920.1056" timestamp="1601887225353" />
+    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2/0.24.1920.1056@0.24.1920.1056" timestamp="1601887462202" />
+    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog" timestamp="1601887449378">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1601887449378" />
     <state width="1895" height="247" key="GridCell.Tab.0.bottom" timestamp="1601887308868">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
@@ -121,10 +139,14 @@
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state x="419" y="185" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1601876393672" />
-    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2" timestamp="1601887229466">
+    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2" timestamp="1601889995933">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1601887229466" />
+    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1601889995933" />
+    <state x="693" y="465" width="524" height="172" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601890039099">
+      <screen x="0" y="24" width="1920" height="1056" />
+    </state>
+    <state x="693" y="465" width="524" height="172" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.24.1920.1056@0.24.1920.1056" timestamp="1601890039099" />
     <state width="647" height="378" key="javadoc.popup.new" timestamp="1601877840359">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>

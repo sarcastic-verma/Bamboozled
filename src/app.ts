@@ -33,7 +33,7 @@ app.get('/', (req: express.Request, res: express.Response) => {
 });
 
 
-app.get('/campus', (req: express.Request, res: express.Response) => {
+app.get('/camp', (req: express.Request, res: express.Response) => {
     connectionOptions.query("describe users", (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
