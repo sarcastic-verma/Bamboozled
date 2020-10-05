@@ -1,8 +1,7 @@
 class RequestError extends Error {
-    constructor(message, errorCode, err, ip) {
+    constructor(message:string, errorCode:number, err:Error) {
         super(message);
-        this.code = errorCode;
-
+        // this.code = errorCode;
         // If err is passed, it will be logged on the console
         if (err) {
             console.log("\n")
@@ -13,11 +12,11 @@ class RequestError extends Error {
                 + currentDate.getHours() + ":"
                 + currentDate.getMinutes() + ":"
                 + currentDate.getSeconds();
-            console.log(`The following error occured on ${datetime}:`);
+            console.log(`The following error occurred on ${datetime}:`);
             console.log(err);
             console.log("\n")
         }
     }
 }
 
-module.exports = RequestError;
+export default  RequestError;
