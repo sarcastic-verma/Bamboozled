@@ -2,7 +2,14 @@
 import express from 'express';
 import Cors from 'cors';
 import mysql from 'mysql';
+
+//Routes
 import userRoutes from './routes/user-routes';
+import bannerRoutes from './routes/banner-routes';
+import orderRoutes from './routes/order-routes';
+import transactionRoutes from './routes/transaction-routes';
+import productRoutes from './routes/product-routes';
+
 
 // Custom Libraries
 import RequestError from "./utils/request-error";
@@ -13,7 +20,12 @@ app.use(express.json());
 app.use(Cors());
 
 // Routes:
-app.use('/users',userRoutes);
+app.use('/user', userRoutes);
+app.use('/banner', bannerRoutes);
+app.use('/order', orderRoutes);
+app.use('/transaction', transactionRoutes);
+app.use('/product', productRoutes);
+
 
 //DB connection
 export const connectionOptions = mysql.createConnection({
