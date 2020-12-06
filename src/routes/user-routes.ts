@@ -3,6 +3,7 @@ import {FieldInfo, MysqlError} from "mysql";
 import {connectionOptions} from "../app";
 
 const router = Router();
+
 router.get('/create', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     CREATE TABLE IF NOT EXISTS USERS (
@@ -15,5 +16,24 @@ router.get('/create', (req: express.Request, res: express.Response) => {
         else res.send(err);
     });
 });
+
+router.get('/add', (req: express.Request, res: express.Response) => {
+    connectionOptions.query(`
+    INSERT INTO USERS
+    VALUES
+    ();
+    `, (err: MysqlError, rows, fields: FieldInfo) => {
+        if (!err) res.send(rows);
+        else res.send(err);
+    });
+});
+
+// GET-ROUTE : fetch all users
+// GET-ROUTE : fetch by id
+// GET-ROUTE : update user
+// GET-ROUTE : add user
+// GET-ROUTE : fetch orders
+// GET-ROUTE : fetch transactions
+// GET-ROUTE : add order to user
 
 export default router;
