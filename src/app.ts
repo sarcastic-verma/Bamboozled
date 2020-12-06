@@ -1,23 +1,22 @@
 // External Libraries
 import express from 'express';
 import Cors from 'cors';
-import mysql, {FieldInfo, MysqlError} from 'mysql';
+import mysql from 'mysql';
+import userRoutes from './routes/user-routes';
 
 // Custom Libraries
-import RequestError from "./models/request-error";
-
-// Routes
-
+import RequestError from "./utils/request-error";
 
 // Setup server:
 const app = express();
 app.use(express.json());
 app.use(Cors());
 
-// Setup Routes:
+// Routes:
+app.use('/users',userRoutes);
 
 //DB connection
-const connectionOptions = mysql.createConnection({
+export const connectionOptions = mysql.createConnection({
     host: process.env.DB_HOST_NAME,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -27,17 +26,6 @@ const connectionOptions = mysql.createConnection({
 
 connectionOptions.connect(function (err) {
     if (err) throw err;
-});
-app.get('/', (req: express.Request, res: express.Response) => {
-    res.send("<h1>Hello</h1>");
-});
-
-
-app.get('/camp', (req: express.Request, res: express.Response) => {
-    connectionOptions.query("describe users", (err: MysqlError, rows, fields: FieldInfo) => {
-        if (!err) res.send(rows);
-        else res.send(err);
-    });
 });
 
 
