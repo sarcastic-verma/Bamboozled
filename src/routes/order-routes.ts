@@ -10,11 +10,14 @@ router.get('/create', (req: express.Request, res: express.Response) => {
         ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,     
         STATUS VARCHAR(50),
         AMOUNT INT,
-        ORDER_PLACED_DATE DATE
+        ORDER_PLACED_DATE DATE,
+        USER_ID INT,
+        FOREIGN KEY (USER_ID) REFERENCES USER(ID) 
     );
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
-        else res.send(err);
+        else
+            res.send(err);
     });
 });
 

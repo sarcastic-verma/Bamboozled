@@ -7,9 +7,10 @@ const router = Router();
 router.get('/create', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     CREATE TABLE IF NOT EXISTS USER (
+        ID INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
         NAME VARCHAR(30),
         ADDRESS VARCHAR(30),
-        EMAIL VARCHAR(20) PRIMARY KEY
+        EMAIL VARCHAR(20)
     );
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
@@ -17,7 +18,7 @@ router.get('/create', (req: express.Request, res: express.Response) => {
     });
 });
 
-router.get('/add', (req: express.Request, res: express.Response) => {
+router.get('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     INSERT INTO USER
     VALUES

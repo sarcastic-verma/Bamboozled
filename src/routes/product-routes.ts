@@ -76,7 +76,7 @@ router.patch('/patch/:id', (req: express.Request, res: express.Response) => {
 });
 
 // POST-ROUTE : add product
-router.post('/add', (req: express.Request, res: express.Response) => {
+router.post('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
                         
     `, (err: MysqlError, rows, fields: FieldInfo) => {
@@ -86,7 +86,7 @@ router.post('/add', (req: express.Request, res: express.Response) => {
 });
 
 // DEL-ROUTE : delete a product
-router.get('/delete/:id', (req: express.Request, res: express.Response) => {
+router.delete('/delete/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
                         
     `, (err: MysqlError, rows, fields: FieldInfo) => {
