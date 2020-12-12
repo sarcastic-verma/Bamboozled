@@ -18,7 +18,7 @@ router.get('/create', (req: express.Request, res: express.Response) => {
     });
 });
 
-router.get('/drop',(req: express.Request, res: express.Response) => {
+router.get('/drop', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`                    
     Drop table USER_ORDER;
     `, (err: MysqlError, rows, fields: FieldInfo) => {
@@ -27,7 +27,7 @@ router.get('/drop',(req: express.Request, res: express.Response) => {
     });
 });
 
-router.get('/describe',(req: express.Request, res: express.Response) => {
+router.get('/describe', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`                    
     Describe USER_ORDER;
     `, (err: MysqlError, rows, fields: FieldInfo) => {
@@ -44,7 +44,7 @@ router.get('/', (req: express.Request, res: express.Response) => {
     });
 });
 
-router.get('/get/:id', (req: express.Request, res: express.Response) => {
+router.get('/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     Select * from USER_ORDER where id = ${req.params.id};
     `, (err: MysqlError, rows, fields: FieldInfo) => {
@@ -66,19 +66,7 @@ router.post('/post/order/:userId', (req: express.Request, res: express.Response)
 );
 
 
-router.get('/get/order/:id', (req: express.Request, res: express.Response) => {
-        // add query here
-
-        //     connectionOptions.query(`
-        // Select * from ORDER where id = ${req.params.id};
-        // `, (err: MysqlError, rows, fields: FieldInfo) => {
-        //         if (!err) res.send(rows);
-        //         else res.send(err);
-        //     });
-    }
-);
-
-router.get('/get/order/user/:userId', (req: express.Request, res: express.Response) => {
+router.get('/get/user/:userId', (req: express.Request, res: express.Response) => {
         // add query here
 
         //     connectionOptions.query(`
