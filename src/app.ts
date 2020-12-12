@@ -20,11 +20,11 @@ app.use(express.json());
 app.use(Cors());
 
 // Routes:
-app.use('/user', userRoutes);
-app.use('/banner', bannerRoutes);
-app.use('/order', orderRoutes);
-app.use('/transaction', transactionRoutes);
-app.use('/product', productRoutes);
+app.use('/api/user', userRoutes);
+app.use('/api/banner', bannerRoutes);
+app.use('/api/order', orderRoutes);
+app.use('/api/transaction', transactionRoutes);
+app.use('/api/product', productRoutes);
 
 
 //DB connection
