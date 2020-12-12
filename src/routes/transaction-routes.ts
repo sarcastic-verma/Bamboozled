@@ -12,4 +12,9 @@ router.get('/get', (req: express.Request, res: express.Response) => {
     });
 });
 
+// GET-ROUTE : fetch transactions by userId
+// POST-ROUTE : add transaction to userId
+// GET-ROUTE : fetch transaction by id
+
+
 export default router;

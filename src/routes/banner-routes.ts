@@ -3,7 +3,7 @@ import {FieldInfo, MysqlError} from "mysql";
 import {connectionOptions} from "../app";
 
 const router = Router();
-router.get('/all', (req: express.Request, res: express.Response) => {
+router.get('/all/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     Select * from banner
     `, (err: MysqlError, rows, fields: FieldInfo) => {
@@ -11,5 +11,11 @@ router.get('/all', (req: express.Request, res: express.Response) => {
         else res.send(err);
     });
 });
+
+// GET-ROUTE : fetch all banners
+// GET-ROUTE : fetch by id
+// PATCH-ROUTE : update banner
+// POST-ROUTE : add banner
+// DEL-ROUTE : delete a banner
 
 export default router;

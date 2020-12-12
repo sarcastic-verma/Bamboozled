@@ -30,10 +30,9 @@ router.get('/add', (req: express.Request, res: express.Response) => {
 
 // GET-ROUTE : fetch all users
 // GET-ROUTE : fetch by id
-// GET-ROUTE : update user
-// GET-ROUTE : add user
-// GET-ROUTE : fetch orders
-// GET-ROUTE : fetch transactions
-// GET-ROUTE : add order to user
+// PATCH-ROUTE : update user
+// POST-ROUTE : add user
+// DEL-ROUTE : delete a user
+
 
 export default router;

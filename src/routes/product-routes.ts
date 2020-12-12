@@ -12,4 +12,11 @@ router.get('/add', (req: express.Request, res: express.Response) => {
     });
 });
 
+// GET-ROUTE : fetch all products
+// GET-ROUTE : search by query
+// GET-ROUTE : fetch product by id
+// PATCH-ROUTE : update product by id
+// POST-ROUTE : add product
+// DEL-ROUTE : delete a product
+
 export default router;

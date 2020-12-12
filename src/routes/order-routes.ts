@@ -12,4 +12,9 @@ router.get('/get', (req: express.Request, res: express.Response) => {
     });
 });
 
+// POST-ROUTE : add order to userId
+// GET-ROUTE : fetch orders by userId
+// GET-ROUTE : fetch order by id
+// PATCH-ROUTE : change order status - { cancel, active, delivered }
+
 export default router;
