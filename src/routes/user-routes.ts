@@ -20,9 +20,9 @@ router.get('/create', (req: express.Request, res: express.Response) => {
 
 router.get('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    INSERT INTO USER
+    INSERT INTO USER(NAME,ADDRESS,EMAIL)
     VALUES
-    ();
+    ("${req.body.NAME}","${req.body.ADDRESS}","${req.body.EMAIL}");
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -47,11 +47,6 @@ router.get('/describe',(req: express.Request, res: express.Response) => {
     });
 });
 
-// GET-ROUTE : fetch all users
-// GET-ROUTE : fetch by id
-// PATCH-ROUTE : update user
-// POST-ROUTE : add user
-// DEL-ROUTE : delete a user
 
 
 export default router;

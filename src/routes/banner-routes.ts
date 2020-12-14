@@ -85,7 +85,7 @@ router.patch('/patch/:id', (req: express.Request, res: express.Response) => {
 // DEL-ROUTE : delete a BANNER
 router.delete('/delete/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    DELETE FROM BANNER WHERE ID=${req.params.id}
+    DELETE FROM BANNER WHERE ID=${req.params.id};
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);

@@ -58,6 +58,7 @@ router.get('/get/user/:userId', (req: express.Request, res: express.Response) =>
 
 router.get('/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
+    Select * from USER_TRANSACTION where id=${req.params.id}
                         
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
@@ -67,6 +68,8 @@ router.get('/:id', (req: express.Request, res: express.Response) => {
 
 router.post('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
+    INSERT INTO USER_TRANSACTION (ORDER_ID,STATUS,TRANSACTION_ID)
+    VALUES ("${req.body.ORDER-ID}","${req.body.STATUS}","${req.body.TRANSACTION_ID}");
                         
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
