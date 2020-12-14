@@ -19,9 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="09cd5402-e734-415b-b731-5805aa7ef942" name="Default Changelist" comment=" -">
+    <list default="true" id="09cd5402-e734-415b-b731-5805aa7ef942" name="Default Changelist" comment=" - updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/order-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/order-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/product-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/product-routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/transaction-routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/transaction-routes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,9 @@
       <workItem from="1607333283832" duration="340000" />
       <workItem from="1607789390424" duration="2377000" />
       <workItem from="1607791791260" duration="252000" />
-      <workItem from="1607792062877" duration="913000" />
+      <workItem from="1607792062877" duration="5985000" />
+      <workItem from="1607843538491" duration="207000" />
+      <workItem from="1607965454682" duration="810000" />
     </task>
     <task id="LOCAL-00001" summary="- added tests boilerplate&#10; - connected sql to gend">
       <created>1601496404147</created>
@@ -120,19 +123,64 @@
       <option name="project" value="LOCAL" />
       <updated>1607791497911</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=" - created order-routes">
+      <created>1607793068525</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607793068525</updated>
+    </task>
+    <task id="LOCAL-00007" summary=" - added drop describe">
+      <created>1607796061945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1607796061945</updated>
+    </task>
+    <task id="LOCAL-00008" summary=" - fixed sql">
+      <created>1607796085128</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1607796085128</updated>
+    </task>
+    <task id="LOCAL-00009" summary=" - fixed routes">
+      <created>1607796254477</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1607796254477</updated>
+    </task>
+    <task id="LOCAL-00010" summary=" - updated sql">
+      <created>1607797930880</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1607797930880</updated>
+    </task>
+    <task id="LOCAL-00011" summary=" - updated transaction-routes">
+      <created>1607797946795</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1607797946795</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/src/app.js" />
-        <option value="$PROJECT_DIR$/src/models/request-error.js" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,7 +190,13 @@
     <MESSAGE value=" - moved to typescript" />
     <MESSAGE value=" - something changed" />
     <MESSAGE value=" - added roadmap" />
-    <option name="LAST_COMMIT_MESSAGE" value=" - added roadmap" />
+    <MESSAGE value=" - created order-routes" />
+    <MESSAGE value=" - added drop describe" />
+    <MESSAGE value=" - fixed sql" />
+    <MESSAGE value=" - fixed routes" />
+    <MESSAGE value=" - updated sql" />
+    <MESSAGE value=" - updated transaction-routes" />
+    <option name="LAST_COMMIT_MESSAGE" value=" - updated transaction-routes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="0" y="394" width="1910" height="313" key="#SQL_Dialects" timestamp="1607791851924">
@@ -153,14 +207,14 @@
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state x="832" y="196" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1607792013682" />
-    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2" timestamp="1607791497704">
+    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2" timestamp="1607797946720">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2/0.24.1920.1056@0.24.1920.1056" timestamp="1607791497704" />
-    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog" timestamp="1601887449378">
+    <state x="454" y="45" width="1002" height="1015" key="CommitChangelistDialog2/0.24.1920.1056@0.24.1920.1056" timestamp="1607797946720" />
+    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog" timestamp="1607966264287">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1601887449378" />
+    <state x="182" y="115" width="1536" height="872" key="DiffContextDialog/0.24.1920.1056@0.24.1920.1056" timestamp="1607966264287" />
     <state width="1899" height="205" key="GridCell.Tab.0.bottom" timestamp="1607274172539">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -185,10 +239,10 @@
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state x="419" y="185" key="SettingsEditor/0.24.1920.1056@0.24.1920.1056" timestamp="1607792041895" />
-    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607791501646">
+    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2" timestamp="1607797949676">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1607791501646" />
+    <state x="555" y="284" width="800" height="537" key="Vcs.Push.Dialog.v2/0.24.1920.1056@0.24.1920.1056" timestamp="1607797949676" />
     <state x="693" y="465" width="524" height="172" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601890039099">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
@@ -197,9 +251,21 @@
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
     <state width="647" height="378" key="javadoc.popup.new/0.24.1920.1056@0.24.1920.1056" timestamp="1601877840359" />
-    <state x="603" y="257" width="712" height="678" key="search.everywhere.popup" timestamp="1601878780264">
+    <state x="603" y="257" width="828" height="678" key="search.everywhere.popup" timestamp="1607797655013">
       <screen x="0" y="24" width="1920" height="1056" />
     </state>
-    <state x="603" y="257" width="712" height="678" key="search.everywhere.popup/0.24.1920.1056@0.24.1920.1056" timestamp="1601878780264" />
+    <state x="603" y="257" width="828" height="678" key="search.everywhere.popup/0.24.1920.1056@0.24.1920.1056" timestamp="1607797655013" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/routes/product-routes.ts</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
