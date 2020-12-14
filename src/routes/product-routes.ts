@@ -38,12 +38,7 @@ router.get('/describe', (req: express.Request, res: express.Response) => {
 // GET-ROUTE : fetch all products
 router.get('/', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    Select * from product ;
-
-    
-
-        
-                        
+    Select * from PRODUCT ;
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -53,8 +48,7 @@ router.get('/', (req: express.Request, res: express.Response) => {
 // GET-ROUTE : search by query
 router.get('/search/:query', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    Select * from product ;
-                        
+    Select * from PRODUCT ;                     
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -64,9 +58,8 @@ router.get('/search/:query', (req: express.Request, res: express.Response) => {
 // GET-ROUTE : fetch product by id
 router.get('/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    Select * from product
-     where id=${req.params.id}
-                        
+    Select * from PRODUCT
+     where id=${req.params.id} ;                        
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -76,13 +69,12 @@ router.get('/:id', (req: express.Request, res: express.Response) => {
 // PATCH-ROUTE : update product by id
 router.patch('/patch/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    Update product
+    Update PRODUCT
     set
-    ${req.body.NAME == null ? "" : `NAME="${req.body.NAME}",`}
-    ${req.body.AMOUNT == null ? "" : `AMOUNT="${req.body.AMOUNT}",`}
-    ${req.body.IMAGE == null ? "" : `IMAGE="${req.body.IMAGE}"`}
-    WHERE ID=${req.params.id};
-                        
+    ${req.body.name == null ? "" : `NAME="${req.body.name}",`}
+    ${req.body.amount == null ? "" : `AMOUNT="${req.body.amount}",`}
+    ${req.body.image == null ? "" : `IMAGE="${req.body.image}"`}
+    WHERE ID=${req.params.id};                        
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -93,8 +85,7 @@ router.patch('/patch/:id', (req: express.Request, res: express.Response) => {
 router.post('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     INSERT INTO PRODUCT (NAME,AMOUNT,IMAGE)
-    VALUES ("${req.body.NAME}","${req.body.AMOUNT}","${req.body.IMAGE}");
-                        
+    VALUES ("${req.body.name}","${req.body.amount}","${req.body.image}");                        
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
@@ -104,8 +95,7 @@ router.post('/post', (req: express.Request, res: express.Response) => {
 // DEL-ROUTE : delete a product
 router.delete('/delete/:id', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
-    DELETE FROM PRODUCT WHERE ID=${req.params.id};
-                        
+    DELETE FROM PRODUCT WHERE ID=${req.params.id};                        
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);

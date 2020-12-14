@@ -22,7 +22,7 @@ router.get('/post', (req: express.Request, res: express.Response) => {
     connectionOptions.query(`
     INSERT INTO USER(NAME,ADDRESS,EMAIL)
     VALUES
-    ("${req.body.NAME}","${req.body.ADDRESS}","${req.body.EMAIL}");
+    ("${req.body.name}","${req.body.address}","${req.body.email}");
     `, (err: MysqlError, rows, fields: FieldInfo) => {
         if (!err) res.send(rows);
         else res.send(err);
