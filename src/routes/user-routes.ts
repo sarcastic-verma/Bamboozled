@@ -47,6 +47,13 @@ router.get('/describe',(req: express.Request, res: express.Response) => {
     });
 });
 
-
+router.get('/',(req: express.Request, res: express.Response) => {
+    connectionOptions.query(`                    
+    select * from USER;
+    `, (err: MysqlError, rows, fields: FieldInfo) => {
+        if (!err) res.send(rows);
+        else res.send(err);
+    });
+});
 
 export default router;

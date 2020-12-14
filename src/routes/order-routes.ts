@@ -56,11 +56,10 @@ router.get('/:id', (req: express.Request, res: express.Response) => {
     });
 });
 
-router.post('/post/order/:userId', (req: express.Request, res: express.Response) => {
+router.post('/post/user/:userId', (req: express.Request, res: express.Response) => {
         connectionOptions.query(`
-    Select * from USER_ORDER where id = ${req.params.id};
     INSERT INTO USER_ORDER (STATUS,AMOUNT,ORDER_PLACED_DATE,USER_ID)
-    VALUES ("active","${req.body.amount}","${req.body.date}","${req.body.userId}");
+    VALUES ("active","${req.body.amount}","${req.body.date}","${req.params.userId}");
     `, (err: MysqlError, rows, fields: FieldInfo) => {
             if (!err) res.send(rows);
             else res.send(err);
